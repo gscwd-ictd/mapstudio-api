@@ -1,4 +1,4 @@
-import { jsonb, pgTable, uuid } from "drizzle-orm/pg-core";
+import { jsonb, pgTable, timestamp, uuid } from "drizzle-orm/pg-core";
 import { userApplication } from "./user-application";
 import { UploadedFile } from "@mapstudio/utils/types";
 
@@ -10,5 +10,8 @@ export const applicationDocuments = pgTable('application_documents', {
     proofOfBilling: jsonb('proof_of_billing').$type<UploadedFile[]>(),
     supportingDocs: jsonb('supporting_docs').$type<UploadedFile[]>(),
     validId: jsonb('valid_id').$type<UploadedFile[]>(),
-    selfie: jsonb('selfie').$type<UploadedFile>()
+    selfie: jsonb('selfie').$type<UploadedFile>(),
+    createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).notNull().defaultNow(),
+    deletedAt: timestamp("deleted_at", { withTimezone: true, mode: 'string' }),
 });

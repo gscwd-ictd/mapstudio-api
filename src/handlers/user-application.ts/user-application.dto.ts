@@ -9,7 +9,6 @@ export const addSchema = z.object({
         x: z.number(),
         y: z.number()
     }), z.instanceof(Placeholder<string, any>)]),
-
     conforme: z.array(z.object({
         type: z.enum(ConformeType),
         firstName: z.string(),
@@ -32,4 +31,5 @@ export const addSchema = z.object({
     noOfPersons: z.number(),
     noOfHousesInLot: z.number(),
     ownershipType: z.enum(OwnershipType),
+    deletedAt: z.string().nullable()
 });
