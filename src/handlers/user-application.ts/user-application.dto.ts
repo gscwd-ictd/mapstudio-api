@@ -2,6 +2,7 @@ import { ConformeType, OwnershipType } from "@mapstudio/utils/enums";
 import { Placeholder, SQL } from "drizzle-orm";
 import { z } from "zod";
 
+// Refer to previous comments
 export const addSchema = z.object({
     id: z.string().uuid().optional(),
     applicantId: z.string().uuid(),

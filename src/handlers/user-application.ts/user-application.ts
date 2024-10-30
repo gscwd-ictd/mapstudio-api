@@ -5,7 +5,7 @@ import { db } from "@mapstudio/config/postgres";
 import { userApplication } from "@mapstudio/db/schema/user-application";
 import { eq } from 'drizzle-orm';
 
-
+// Refer to previous comments
 export const userApplicationHandler = new Hono().basePath('user-application')
 
     .post(zValidator('json', addSchema), async (c) => {

@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+// Refer to comments from /handlers/applicants.dto.ts file in naming variables and case convention for zod schemas
 export const findByUserApplicationIdSchema = z.object({ userApplicationId: z.string().uuid() });
 export const addSchema = z.object({
     id: z.string().uuid().optional(),

@@ -5,6 +5,7 @@ import { Hono } from "hono";
 import { addSchema, findByUserApplicationIdSchema } from "./application-documents.dto";
 import { sql, eq, } from "drizzle-orm";
 
+// Refer to previous comments
 export const applicationDocumentsHandler = new Hono().basePath('/application-documents')
     .get(async c => {
         return c.json(await db.select().from(applicationDocuments));
